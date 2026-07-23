@@ -1,54 +1,97 @@
-To delete a Git branch, there are separate commands for your local repository and the remote (origin).
+# Git Branch Deletion Cheat Sheet
 
-Delete a local branch
+## 1. Switch away from the branch you want to delete
 
-If the branch has already been merged:
+You cannot delete the branch you're currently on.
 
+```bash
+git switch main
+```
+
+---
+
+## 2. Delete a local branch
+
+### Safe delete (only if already merged)
+
+```bash
 git branch -d branch-name
+```
 
-If you want to force-delete it even if Git thinks it hasn't been merged:
+### Force delete (whether merged or not)
 
+```bash
 git branch -D branch-name
-Delete the branch from origin
+```
+
+---
+
+## 3. Delete the branch from the remote (`origin`)
+
+```bash
 git push origin --delete branch-name
+```
 
-This removes the branch from the remote repository.
+---
 
-Delete both local and remote
+## 4. Delete both local and remote
+
+```bash
 git branch -D branch-name
 git push origin --delete branch-name
+```
 
-(or use -d instead of -D if appropriate)
+Replace `-D` with `-d` if you only want to delete merged branches.
 
-See all branches
+---
 
-Local:
+## 5. List branches
 
+### Local branches
+
+```bash
 git branch
+```
 
-Remote:
+### Remote branches
 
+```bash
 git branch -r
+```
 
-Both:
+### Local + Remote branches
 
+```bash
 git branch -a
-Clean up stale remote-tracking branches
+```
 
-If someone else deleted a branch on GitHub (or you deleted it from another machine), your local repo may still show it under origin/....
+---
 
-Run:
+## 6. Remove stale remote-tracking branches
 
+If a branch has already been deleted on GitHub but still appears locally:
+
+```bash
 git fetch --prune
+```
 
 or
 
+```bash
 git remote prune origin
+```
 
-This removes obsolete origin/branch-name references from your local repository.
+Both commands clean up obsolete `origin/<branch>` references.
 
-Important: You cannot delete the branch you're currently on. Switch to another branch first, for example:
+---
 
+## Example
+
+Delete a feature branch named `maintenance/pipeline-hardening`:
+
+```bash
 git switch main
-
-Then delete the other branch.
+git branch -D maintenance/pipeline-hardening
+git push origin --delete maintenance/pipeline-hardening
+git fetch --prune
+```
