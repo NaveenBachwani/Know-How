@@ -30,6 +30,8 @@ export GEMINI_API_KEY="AQ.xyz"
 # Project shortcuts
 # -----------------------------
 
+alias rm='trash-put'
+
 alias raindrop='cd ~/projects/raindrop-li-x-buffer && source venv/bin/activate'
 alias proj='cd ~/projects'
 alias ll='ls -al'
