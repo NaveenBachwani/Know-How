@@ -1,0 +1,15 @@
+# Python
+venv/
+__pycache__/
+
+# Local backups
+backups/
+
+# State files
+backups/.state/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
