@@ -1,16 +1,14 @@
-# Dev Notes
+# Knowledge Base as a GitHub repo
 
-My personal technical reference library.
+## developer/ Dev Notes
 
-## Topics
+### Topics
 
 - Bash
 - Git
 - Linux
 - Python
-- VS Code
 - AI Tools
-- Reusable snippets
 
 ## Principles
 
@@ -21,8 +19,7 @@ My personal technical reference library.
 
 ## Inbox
 
-Capture first:
+Capture first | Organize later
 
 00-inbox/quick.md
 
-Organize later.
