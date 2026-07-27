@@ -13,3 +13,6 @@ backups/.state/
 
 # VS Code
 .vscode/
+
+# Utilities / Logs /
+utilities/logs/
